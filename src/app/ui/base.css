@@ -1,0 +1,192 @@
+/* Design tokens and base styles for the popup / options UI.
+   Neutral palette, 1px borders, soft shadows; light and dark themes. */
+
+:root {
+  color-scheme: light;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-muted: #f4f4f5;
+  --bg-hover: rgba(24, 24, 27, 0.04);
+  --bg-active: rgba(24, 24, 27, 0.07);
+  --bg-elevated: #ffffff;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --fg: #09090b;
+  --fg-muted: #71717a;
+  --fg-subtle: #a1a1aa;
+
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-fg: #ffffff;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --ring: rgba(79, 70, 229, 0.35);
+
+  --primary: #18181b;
+  --primary-hover: #27272a;
+  --primary-fg: #fafafa;
+
+  --danger: #dc2626;
+  --danger-soft: rgba(220, 38, 38, 0.1);
+  --success: #16a34a;
+  --success-soft: rgba(22, 163, 74, 0.12);
+  --warning: #d97706;
+  --warning-soft: rgba(245, 158, 11, 0.14);
+  --info-soft: rgba(79, 70, 229, 0.06);
+
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+  --backdrop: rgba(9, 9, 11, 0.4);
+
+  --tooltip-background: #18181b;
+  --tooltip-color: #fafafa;
+
+  /* Layout; the popup / options entry points override these. */
+  --top-bar-height: 48px;
+  --drawer-width: 48px;
+}
+
+html.dark-mode {
+  color-scheme: dark;
+  --bg: #09090b;
+  --bg-subtle: #0f0f12;
+  --bg-muted: #18181b;
+  --bg-hover: rgba(250, 250, 250, 0.05);
+  --bg-active: rgba(250, 250, 250, 0.09);
+  --bg-elevated: #18181b;
+  --border: #27272a;
+  --border-strong: #3f3f46;
+  --fg: #fafafa;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #71717a;
+
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-fg: #0b0b1a;
+  --accent-soft: rgba(129, 140, 248, 0.14);
+  --ring: rgba(129, 140, 248, 0.45);
+
+  --primary: #fafafa;
+  --primary-hover: #e4e4e7;
+  --primary-fg: #18181b;
+
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.14);
+  --success: #4ade80;
+  --success-soft: rgba(74, 222, 128, 0.14);
+  --warning: #fbbf24;
+  --warning-soft: rgba(251, 191, 36, 0.14);
+  --info-soft: rgba(129, 140, 248, 0.08);
+
+  --shadow-md: 0 4px 6px -2px rgba(0, 0, 0, 0.3), 0 12px 24px -6px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+  --backdrop: rgba(0, 0, 0, 0.6);
+
+  --tooltip-background: #fafafa;
+  --tooltip-color: #18181b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+/* Small set of utilities kept from the original markup. */
+.d-flex { display: flex; }
+.flex-grow, .flex-grow-1 { flex-grow: 1; min-width: 0; }
+.align-items-center { align-items: center; }
+.hidden { display: none !important; }
+.clickable { cursor: pointer; }
+.mono { font-family: var(--font-mono); }
+.text-muted { color: var(--fg-muted); }
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mx-1 { margin-left: 4px; margin-right: 4px; }
+.me-1 { margin-right: 4px; }
+.ms-1 { margin-left: 4px; }
+
+/* Count pill used next to section titles. */
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-muted);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+}
+
+/* Label pill, e.g. "Popular" / "New". */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--fg-muted);
+}

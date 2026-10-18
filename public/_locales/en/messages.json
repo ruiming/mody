@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Mody - Modify HTTP Headers"
+  },
+  "appDescription": {
+    "message": "Modify request & response headers, redirect URLs and tweak CSP. Multiple profiles, filters, and Chrome sync. No tracking."
+  },
+  "mody_rule_error": {
+    "message": "Some rules are invalid and could not be applied."
+  },
+  "rule_success": {
+    "message": "Rules applied"
+  }
+}

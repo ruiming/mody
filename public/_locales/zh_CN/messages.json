@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Mody - 修改 HTTP 请求头"
+  },
+  "appDescription": {
+    "message": "修改请求头与响应头、重定向 URL、调整 CSP。多配置、多种过滤器、Chrome 账号同步，无任何追踪。"
+  },
+  "mody_rule_error": {
+    "message": "部分规则无效，未能生效"
+  },
+  "rule_success": {
+    "message": "规则已生效"
+  }
+}

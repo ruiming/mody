@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "version": "1.0.0",
+  "description": "__MSG_appDescription__",
+  "default_locale": "en",
+  "icons": {
+    "16": "images/icon_16.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon_16.png",
+      "48": "images/icon_48.png",
+      "128": "images/icon_128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Mody"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "alarms",
+    "contextMenus",
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "storage": {
+    "managed_schema": "schema.json"
+  },
+  "commands": {
+    "toggle_pause": {
+      "description": "Toggle pause"
+    },
+    "switch_to_profile_1": {
+      "description": "Switch to profile 1"
+    },
+    "switch_to_profile_2": {
+      "description": "Switch to profile 2"
+    },
+    "switch_to_profile_3": {
+      "description": "Switch to profile 3"
+    },
+    "switch_to_profile_4": {
+      "description": "Switch to profile 4"
+    }
+  },
+  "short_name": "Mody"
+}
