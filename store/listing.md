@@ -51,5 +51,5 @@ Mody 让开发和测试同学直接在浏览器里修改 HTTP 流量，无需代
 ## Privacy practices tab
 - Single purpose: "Modify HTTP requests and responses (headers, redirects, CSP) while developing and testing websites."
 - Data usage: does not collect or transmit any user data. Certify: not sold, not used for unrelated purposes, not used for creditworthiness.
-- Privacy policy URL: host privacy-policy.md (e.g. GitHub Pages / Gist) and paste the URL.
+- Privacy policy URL: https://github.com/ruiming/mody/blob/main/store/privacy-policy.md
 - Permission justifications: see permissions.md.

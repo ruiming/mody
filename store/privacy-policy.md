@@ -10,4 +10,4 @@ Mody is a browser extension for modifying HTTP requests and responses during web
 - **Your rules stay in your browser.** Profiles and settings are stored with `chrome.storage.local`. If cloud sync is enabled (default), a compressed copy is stored in `chrome.storage.sync`, which Google syncs between browsers signed in to *your* Google account. The developer has no access to this data. You can turn sync off and delete all snapshots in *Cloud sync & backup*.
 - **Permissions** are used only for the features described in the store listing.
 
-Questions: open an issue at <your repository URL> or email <your contact email>.
+Questions or concerns: open an issue at <https://github.com/ruiming/mody/issues>.
